@@ -5,32 +5,20 @@ Docker image containing NodeJS, Serverless Framework and Yarn.
 ## Usage
 
 ```bash
-# build image and release with latest serverless framework
+# build image, tag image, push image, update git tag
 $ make release
 
-# run the image you built
-$ make shell
+# Run serverless deploy in the image.
+$ docker run --rm -it -v $(PWD):/opt/app -v ~/.aws:/root/.aws -v ~/.ssh:/root/.ssh $(IMAGE_NAME) bash
+bash-4.3# sls deploy
+
 ```
 
 ## Example
 
 `example/apigw` is an example on how to use `amaysim/serverless`.
 
-## Update Docker image
-
-### New version of Serverless Framework
-
-1. Change `SERVERLESS` of `Dockerfile`
-2. Change `SERVERLESS_VERSION` of `Makefile`
-3. Change version of docker-serverless in `example/apigw/docker-compose`
-3. Build and test locally (test also the apigw example)
-4. Commit and push the changes
-5. Tag the commit with the command `$ make tag`
-6. Go to [hub.docker.com](hub.docker.com)
-7. In `Build Details` tab, you should now see the new tag kicking off
-
-Docker image
-------------
+## Docker image
 
 The Docker image has the following:
 
