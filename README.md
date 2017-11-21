@@ -5,7 +5,7 @@ Docker image containing NodeJS, Serverless Framework and Yarn.
 ## Usage
 
 ```bash
-# build image, tag image, push image, update git tag
+# build image, tag image, push image, update git tag with latest serverless release (one-time task)
 $ make release
 
 # Run serverless deploy in the image.
