@@ -1,4 +1,4 @@
-# amaysim/serverless
+# svls/serverless
 
 Docker image containing NodeJS, Serverless Framework and Yarn.
 
@@ -11,7 +11,6 @@ $ make release
 # Run serverless deploy in the image.
 $ docker run --rm -it -v $(PWD):/opt/app -v ~/.aws:/root/.aws -v ~/.ssh:/root/.ssh $(IMAGE_NAME) bash
 bash-4.3# sls deploy
-
 ```
 
 ## Example
