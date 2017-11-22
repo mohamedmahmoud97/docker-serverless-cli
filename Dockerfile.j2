@@ -22,4 +22,5 @@ RUN ln -sf /opt/yarn/dist/bin/yarn /usr/local/bin/yarn && \
     yarn --version
 ENV SERVERLESS serverless@{{ version }}
 RUN yarn global add $SERVERLESS
+EXPOSE 3000 8000
 WORKDIR /opt/app
